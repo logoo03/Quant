@@ -9,11 +9,12 @@ int Propensity_Diagnosis() {
         for (int j = 0; j < q.choice_count; j++) {
             printf("%d. %s\n", j + 1, q.choices[j]);
         }
-        int input = -1;
-        printf("답 : "); scanf("%d", &input);
-        while (input < 1 || input > q.choice_count) {
+        printf("답 : ");
+        char input = getchar(); getchar();
+        while (input < '1' || input > '0' + q.choice_count) {
             printf("잘못 입력하셨습니다. 다시 입력해주세요.\n");
-            printf("답 : "); scanf("%d", &input);
+            printf("답 : ");
+            input = getchar(); getchar();
         }
         Score += q.scores[input - 1];
     }
