@@ -15,12 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="quant.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="question.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="quant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="question_data.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

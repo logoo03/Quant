@@ -128,9 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
+    <ClCompile Include="quant.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="quant.h" />
     <ClInclude Include="question.h" />
+    <ClInclude Include="question_data.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
