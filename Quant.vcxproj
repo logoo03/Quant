@@ -127,13 +127,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="company.c" />
+    <ClCompile Include="csv.c" />
+    <ClCompile Include="fread_csv_line.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="quant.c" />
+    <ClCompile Include="split.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="company.h" />
+    <ClInclude Include="csv.h" />
     <ClInclude Include="quant.h" />
     <ClInclude Include="question.h" />
     <ClInclude Include="question_data.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Y2022_ROE_Data.csv" />
+    <None Include="Y2022_ROE_TOP50_Data.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
