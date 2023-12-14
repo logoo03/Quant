@@ -135,6 +135,10 @@
     <ClInclude Include="question.h" />
     <ClInclude Include="question_data.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\kakaodownload\Y2022_ROE_Data.csv" />
+    <None Include="..\..\..\..\..\kakaodownload\Y2022_ROE_TOP50_Data.csv" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

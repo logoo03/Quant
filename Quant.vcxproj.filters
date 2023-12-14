@@ -33,4 +33,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\kakaodownload\Y2022_ROE_TOP50_Data.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\..\kakaodownload\Y2022_ROE_Data.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
