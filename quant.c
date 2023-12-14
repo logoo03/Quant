@@ -16,7 +16,7 @@ int Propensity_Diagnosis() {
             printf("답 : ");
             input = getchar(); getchar();
         }
-        Score += q.scores[input - 1];
+        Score += q.scores[input - '0' - 1];
     }
     if (Score >= 80.0) {
         printf("투자 점수는 %.lf이며 투자 성향은 '공격투자형'입니다.\n", Score);
@@ -66,4 +66,14 @@ void Investment_Tendency_Wording(int Class) {
     else {
 
     }
+    ROE* roedata = load_roe();
+
+    printf("\n---테스트출력---\ncompany: %s\nscore: %.2f", roedata[0].name, roedata[0].score);
+    printf("\ncompany: %s\nscore: %.2f", roedata[1].name, roedata[1].score);
+
+
+    Industry* industrydata = load_industry();
+    printf("\n---테스트출력---\ncompany: %s\nindustry: %s\nscore: %.2f", industrydata[0].name, industrydata[0].industry, industrydata[0].score);
+    printf("\ncompany: %s\nindustry: %s\nscore: %.2f", industrydata[1].name, industrydata[0].industry, industrydata[1].score);
+
 }

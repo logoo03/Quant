@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "question.h"
+#include "company.h"
 
 int Propensity_Diagnosis();
 

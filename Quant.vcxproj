@@ -128,15 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="company.c" />
-    <ClCompile Include="csv.c" />
-    <ClCompile Include="fread_csv_line.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="quant.c" />
-    <ClCompile Include="split.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="company.h" />
-    <ClInclude Include="csv.h" />
     <ClInclude Include="quant.h" />
     <ClInclude Include="question.h" />
     <ClInclude Include="question_data.h" />

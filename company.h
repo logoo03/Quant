@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "csv.h"
 
 #define DATA_ROE_COUNT 50
 #define DATA_INDUSTRY_COUNT 9

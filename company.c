@@ -3,7 +3,7 @@
 ROE* load_roe() {
 	FILE* f;
 	f = fopen("Y2022_ROE_TOP50_Data.csv", "r");
-	char str[16384];
+	char str[8192];
 	str[0] = '\0';
 	char buf[128];
 
@@ -12,14 +12,17 @@ ROE* load_roe() {
 	}
 
 	fclose(f);
-	char** parsed = parse_csv(str);
 	
 	ROE* roeArray = (ROE*)malloc(sizeof(ROE) * DATA_ROE_COUNT);
-	for (int i = 1; i < DATA_ROE_COUNT + 1; i++) {
-		strcpy(roeArray[i].name, parsed[i * 2]);
-		roeArray[i].score = atof(parsed[i * 2 + 1]);
+	int i = 0;
+	char* ptr = strtok(str, "\n");
+	ptr = strtok(NULL, ",");
+	while (ptr != NULL) {
+		strcpy(roeArray[i].name, ptr);
+		ptr = strtok(NULL, "\n");
+		roeArray[i++].score = atof(ptr);
+		ptr = strtok(NULL, ",");
 	}
-	free_csv_line(parsed);
 
 	return roeArray;
 }
@@ -28,7 +31,7 @@ ROE* load_roe() {
 Industry* load_industry() {
 	FILE* f;
 	f = fopen("Y2022_ROE_Data.csv", "r");
-	char str[16384];
+	char str[8192];
 	str[0] = '\0';
 	char buf[256];
 
@@ -37,15 +40,19 @@ Industry* load_industry() {
 	}
 
 	fclose(f);
-	char** parsed = parse_csv(str);
 
 	Industry* industryArray = (Industry*)malloc(sizeof(Industry) * DATA_INDUSTRY_COUNT);
-	for (int i = 1; i < DATA_INDUSTRY_COUNT + 1; i++) {
-		strcpy(industryArray[i].name, parsed[i * 2]);
-		strcpy(industryArray[i].industry, parsed[i * 2 + 1]);
-		industryArray[i].score = atof(parsed[i * 2 + 2]);
+	int i = 0;
+	char* ptr = strtok(str, "\n");
+	ptr = strtok(NULL, ",");
+	while (ptr != NULL) {
+		strcpy(industryArray[i].name, ptr);
+		ptr = strtok(NULL, ",");
+		strcpy(industryArray[i].industry, ptr);
+		ptr = strtok(NULL, "\n");
+		industryArray[i++].score = atof(ptr);
+		ptr = strtok(NULL, ",");
 	}
-	free_csv_line(parsed);
 
 	return industryArray;
 }
