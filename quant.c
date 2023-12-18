@@ -71,7 +71,7 @@ void Investment_Tendency_Wording(int Class) {
         printf("고객님께서 분산투자를 투자의 제 1원칙이라고 생각하십니까? 원하시면 Y 원하지 않으시면 N을 입력해주세요.\n답변 : "); scanf("\n%c", &Q2);
         system("cls");
 
-        if (Q1 == 'Y') {
+        if (Q1 == 'Y' || Q1 == 'y') {
             int cnt; 
             printf("마지막 질문 입니다.\n최소 몇 개의 기업에 투자하실 계획이신가요? 50이하의 숫자를 입력해주세요.\n답변 : "); scanf("\n%d", &cnt);
             system("cls");
@@ -81,27 +81,17 @@ void Investment_Tendency_Wording(int Class) {
                 ROE* roedata = load_roe();
                 printf("Company%d : %s\n", i + 1 ,roedata[i].name);
             }
-            if (Q2 == 'Y') {
-                printf("아래의 9개의 기업은 다양한 산업에서 우수한 지표를 보이는 기업리스트입니다.\n");
-                for (int j = 0; j < 9; j++) {
-                    Industry* industrydata = load_industry();
-                    printf("Company%d : %s\n",j+1,industrydata[j].name);
-                }
-                
+        }
+        if (Q2 == 'Y' || Q2 == 'y') {
+            printf("아래의 9개의 기업은 다양한 산업에서 우수한 지표를 보이는 기업리스트입니다.\n");
+            for (int j = 0; j < 9; j++) {
+                Industry* industrydata = load_industry();
+                printf("Company%d : %s\n", j + 1, industrydata[j].name);
             }
         }
-        else {
-            if (Q2 == 'Y') {
-                printf("아래의 9개의 기업은 다양한 산업에서 우수한 지표를 보이는 기업리스트입니다.\n");
-                for (int j = 0; j < 9; j++) {
-                    Industry* industrydata = load_industry();
-                    printf("Company%d : %s\n", j+1, industrydata[j].name);
-                }
-
-            }
-            else {
-                printf("현재까지 준비된 서비스로는 투자 자문이 불가능합니다. 다음 기회에 이용해주세요.");
-            }
+        
+        if (Q1 != 'Y' && Q1 != 'y' && Q2 != 'Y' && Q2 != 'y') {
+            printf("현재까지 준비된 서비스로는 투자 자문이 불가능합니다. 다음 기회에 이용해주세요.");
         }
     }
     return 0;
