@@ -5,14 +5,14 @@ int Propensity_Diagnosis() {
     double Score = 0;
     for (int i = 0; i < 7; i++) {
         Question q = questions[i];
-        printf("%d. %s\n\n", i + 1, q.prompt);
+        system("cls");
+        printf("\n%d. %s\n\n", i + 1, q.prompt);
         for (int j = 0; j < q.choice_count; j++) {
             printf("%d. %s\n", j + 1, q.choices[j]);
         }
         printf("답 : ");
         int input; scanf("%d", &input);
         while (input < 1 || input > q.choice_count) {
-            int retry;
             printf("잘못 입력하셨습니다. 다시 입력해주세요.\n");
             printf("답 : ");
             scanf("%d", &input);
@@ -60,15 +60,22 @@ void Investment_Tendency_Wording(int Class) {
         }
     }
     else {
+        system("cls");
         char Q1, Q2;
         printf("투자 자문를 위해서는 몇 가지의 질문을 더 답해주셔야합니다\n\n");
         printf("첫 번째 질문입니다.\n");
         printf("고객님께서 장기적으로 유망한 기업에 투자를 원하십니까? 원하시면 Y 원하지 않으시면 N을 입력해주세요.\n답변 : "); scanf("\n%c", &Q1);
+        system("cls");
+
         printf("두 번째 질문입니다.\n");
         printf("고객님께서 분산투자를 투자의 제 1원칙이라고 생각하십니까? 원하시면 Y 원하지 않으시면 N을 입력해주세요.\n답변 : "); scanf("\n%c", &Q2);
+        system("cls");
+
         if (Q1 == 'Y') {
             int cnt; 
             printf("마지막 질문 입니다.\n최소 몇 개의 기업에 투자하실 계획이신가요? 50이하의 숫자를 입력해주세요.\n답변 : "); scanf("\n%d", &cnt);
+            system("cls");
+
             printf("아래의 %d개의 기업리스트입니다.\n", cnt);
             for (int i = 0; i < cnt; i++) {
                 ROE* roedata = load_roe();
