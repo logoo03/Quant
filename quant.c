@@ -15,7 +15,7 @@ int Propensity_Diagnosis() {
             int retry;
             printf("잘못 입력하셨습니다. 다시 입력해주세요.\n");
             printf("답 : ");
-            scanf("%d", &retry); input = retry;
+            scanf("%d", &input);
         }
         Score += q.scores[input - 1];
     }
